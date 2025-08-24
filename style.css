@@ -1821,11 +1821,11 @@ body {
 
 .explore-content-image img {
     width: 100%;
-    height: 750px;
+    height: auto; /* Changed from fixed 750px */
+    max-height: 500px; /* Add maximum height for large screens */
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-
 
 
 .explore-content-text h3 {
@@ -1914,12 +1914,13 @@ body {
 
 
 .manur img {
-      width: 100%;
-    height: 750px;
+    width: 100%;
+    height: auto; /* Changed from fixed 750px */
+    max-height: 500px; /* Add maximum height for large screens */
     object-fit: cover;
     transition: transform 0.3s ease;
-
-
+    border-radius: 10px; /* Add some styling */
+    margin: 20px 0; /* Add some spacing */
 }
 
 .manur h2 {
@@ -2285,3 +2286,93 @@ body {
 }
 
 
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+    .explore-content-image img {
+        max-height: 300px; /* Smaller max height on tablets */
+    }
+    
+    .manur img {
+        max-height: 300px; /* Smaller max height on tablets */
+    }
+    
+    /* Fix for Mission & Vision text spacing */
+    .explore-content-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .explore-content-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    /* Fix for Staff Report section */
+    .manur {
+        padding: 20px;
+        margin: 30px 0;
+    }
+    
+    .manur h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .manur p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .explore-content-image img {
+        max-height: 250px; /* Even smaller on phones */
+    }
+    
+    .manur img {
+        max-height: 250px; /* Even smaller on phones */
+    }
+    
+    /* Further mobile optimizations */
+    .explore-content-text h3 {
+        font-size: 1.6rem;
+    }
+    
+    .explore-content-text p {
+        font-size: 0.95rem;
+    }
+    
+    .manur h2 {
+        font-size: 1.6rem;
+    }
+    
+    .manur p {
+        font-size: 0.9rem;
+    }
+    
+    /* Fix for the image caption */
+    .explore-content-image p {
+        font-size: 0.85rem;
+        font-style: italic;
+        text-align: center;
+        margin-top: 10px;
+        color: #666;
+    }
+}
+
+@media (max-width: 320px) {
+    /* Extra small devices */
+    .explore-content-image img,
+    .manur img {
+        max-height: 200px;
+    }
+    
+    .explore-content-text h3 {
+        font-size: 1.4rem;
+    }
+    
+    .manur h2 {
+        font-size: 1.4rem;
+    }
+}
